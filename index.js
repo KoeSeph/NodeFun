@@ -3,7 +3,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendfile('index.html','style.css');
+  res.sendfile('index.html');
+});
+app.get('/style.css', function(req, res){
+  res.sendfile('style.css');
 });
 io.on('connection', function(socket){
   console.log('a user connected');
