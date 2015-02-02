@@ -1,0 +1,8 @@
+{
+  "name": "chat-thing",
+  "version": "0.0.1",
+  "description": "Hope this app thing works",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}
