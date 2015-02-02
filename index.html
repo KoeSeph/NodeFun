@@ -12,6 +12,19 @@
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
+  //Automatic Populating function;
+  function automaniac() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    $("#messages").append($('<li>').text(text));
+    $('button').trigger('click');
+  }
+  $('button').on('click', function(){
+    automaniac();
+  });
   var socket = io();
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
@@ -21,6 +34,7 @@
   socket.on('chat message', function(msg){
     $('#messages').append($('<li>').text(msg));
   });
+  
   </script>
 </body>
 </html
