@@ -8,6 +8,9 @@ app.get('/', function(req, res){
 app.get('/style.css', function(req, res){
   res.sendfile('style.css');
 });
+app.get('/scriptin.js', function(req, res){
+  res.sendfile('scriptin.js');
+});
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('chat message', function(msg){
