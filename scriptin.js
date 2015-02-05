@@ -6,18 +6,18 @@
     }
   //Automatic Populating function;
 
-  // function automaniac() {
-  //   var text = "";
-  //   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  function automaniac() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  //   for (var i = 0; i < 5; i++)
-  //     text += possible.charAt(Math.floor(Math.random() * possible.length));
-  //   $("#messages").append($('<li>').text(text));
-  //   $('button').trigger('click');
-  // }
-  // $('button').on('click', function(){
-  //   automaniac();
-  // });
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    $("#messages").append($('<li>').text(text));
+    $('button').trigger('click');
+  }
+  $('button').on('click', function(){
+    automaniac();
+  });
   var socket = io();
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
